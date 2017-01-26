@@ -18,7 +18,7 @@ function pulldownRefresh() {
 		var cateid = plus.storage.getItem("curcateid");
 		var table = document.body.querySelector('.mui-table-view');
 		var str = "";
-		mui.getJSON(domain + "/index.php?m=home&c=api&a=categorylist",{id:cateid,curpage:1},function(data){
+		mui.getJSON(domain + "/index.php?m=home&c=api&a=categorylist",{id:cateid,curpage:1,version:version},function(data){
 			mui.each(data,function(key,val){
 				str += '<li class="mui-table-view-cell mui-media mui-col-xs-12"><a href="#" articleid="'+val.id+'">';
 				str += '<img class="mui-media-object" src="http://kb2048.xyz'+val.litpic+'">';
@@ -42,7 +42,7 @@ function pullupRefresh() {
 		var cateid = plus.storage.getItem("curcateid");
 		var table = document.body.querySelector('.mui-table-view');
 		++curpage;
-		mui.getJSON(domain + "/index.php?m=home&c=api&a=categorylist",{id:cateid,curpage:curpage},function(data){
+		mui.getJSON(domain + "/index.php?m=home&c=api&a=categorylist",{id:cateid,curpage:curpage,version:version},function(data){
 			if(data.status == "nomore"){
 				mui('#pullrefresh').pullRefresh().endPullupToRefresh(true);
 			}else{

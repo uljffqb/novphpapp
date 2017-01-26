@@ -17,16 +17,21 @@ function pulldownRefresh() {
 	setTimeout(function() {
 		var table = document.body.querySelector('.mui-table-view');
 		var str = "";
-		mui.getJSON(domain + "/index.php?m=home&c=api&a=categorylist",{curpage:1},function(data){
-			mui.each(data,function(key,val){
-				str += '<li class="mui-table-view-cell mui-media"><a href="#" articleid="'+val.id+'">';
-				str += '<img class="mui-media-object mui-pull-left" src="http://kb2048.xyz'+val.litpic+'">';
-				str += '<div class="mui-media-body">'+val.title+'<p class="mui-ellipsis">'+val.time+'</p></div>';
-				str += '</a></li>';
-			});
-			table.innerHTML = str;
-			curpage = 1;
-			mui('#pullrefresh').pullRefresh().refresh(true);
+		mui.getJSON(domain + "/index.php?m=home&c=api&a=categorylist",{curpage:1,version:version},function(data){
+			if(data.status == "update"){
+				downWgt(data.url);
+			}else{
+				mui.each(data,function(key,val){
+					str += '<li class="mui-table-view-cell mui-media"><a href="#" articleid="'+val.id+'">';
+					str += '<img class="mui-media-object mui-pull-left" src="http://kb2048.xyz'+val.litpic+'">';
+					str += '<div class="mui-media-body">'+val.title+'<p class="mui-ellipsis">'+val.time+'</p></div>';
+					str += '</a></li>';
+				});
+				table.innerHTML = str;
+				curpage = 1;
+				mui('#pullrefresh').pullRefresh().refresh(true);
+			}
+			
 		});
 		mui('#pullrefresh').pullRefresh().endPulldownToRefresh(); //refresh completed
 		mask.close();
@@ -41,7 +46,7 @@ function pullupRefresh() {
 	setTimeout(function() {
 		var table = document.body.querySelector('.mui-table-view');
 		++curpage;
-		mui.getJSON(domain + "/index.php?m=home&c=api&a=categorylist",{curpage:curpage},function(data){
+		mui.getJSON(domain + "/index.php?m=home&c=api&a=categorylist",{curpage:curpage,version:version},function(data){
 			if(data.status == "nomore"){
 				mui('#pullrefresh').pullRefresh().endPullupToRefresh(true);
 			}else{

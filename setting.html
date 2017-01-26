@@ -292,7 +292,10 @@
 		//var shares = {};
 		mui.plusReady(function() {
 			//显示版本号
-			document.getElementById("versionno").innerHTML = plus.runtime.version;
+			 plus.runtime.getProperty(plus.runtime.appid,function(inf){
+    			wgtVer=inf.version;
+				document.getElementById("versionno").innerHTML = wgtVer;
+			});
 			/*plus.share.getServices(function(s) {
 				if (s && s.length > 0) {
 					for (var i = 0; i < s.length; i++) {

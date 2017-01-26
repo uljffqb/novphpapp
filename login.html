@@ -127,6 +127,7 @@
 		<script src="js/mui.enterfocus.js"></script>
 		<script src="js/common.js"></script>
 		<script src="js/app.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/update.js" type="text/javascript" charset="utf-8"></script>
 		<script>
 			(function($, doc) {
 				$.init({
@@ -137,6 +138,10 @@
 				//alert(settings.gestures);
 				//alert(JSON.stringify(settings));
 				$.plusReady(function() {
+					plus.runtime.getProperty(plus.runtime.appid,function(inf){
+					    wgtVer=inf.version;
+					    localStorage.setItem("version",wgtVer);
+					});
 					if(islogin() == "yes" && (settings.gestures == "" || typeof(settings.gestures) == "undefined")){
 						gotourl("main.html");
 					}else if(settings.gestures != "" && typeof(settings.gestures) != "undefined"){

@@ -3,7 +3,10 @@ mui.plusReady(function(){
 	var self = plus.webview.currentWebview();
 	var articleid = self.articleid;
 	//var articleid = GetQueryString("id");
+	var mask  = mui.createMask();
 	if(articleid != null && articleid != "null"){
+		mask.show();
+		plus.nativeUI.showWaiting("正在加载...");
 		mui.getJSON(domain+"/index.php?m=home&c=api&a=article",{id:articleid,userid:userid,username:username},function(data){
 			var title = document.getElementById("title");
 			title.innerHTML = data.title;
@@ -23,6 +26,8 @@ mui.plusReady(function(){
 			articletitle.innerHTML = data.title;
 			articlecontent.innerHTML = data.content;
 		});
+		plus.nativeUI.closeWaiting();
+		mask.close();
 	}else{
 		alert("文章不存在");
 		mui.back();

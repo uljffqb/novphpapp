@@ -2,7 +2,8 @@ var appname = "kb2048";
 var domain = localStorage.getItem("domain");
 var userid = localStorage.getItem("userid");
 var username = localStorage.getItem("username");
-var line = localStorage.getItem("line");
+var line = localStorage.getItem("line");  //线路选择
+var version = localStorage.getItem("version"); //当前版本
 var mask = mui.createMask();
 function gotourl(url){
 	mui.openWindow({
@@ -58,11 +59,11 @@ function login(loginInfo,callback){
 	loginInfo.username = loginInfo.username || '';
 	loginInfo.password = loginInfo.password || '';
 	loginInfo.line = loginInfo.line || '';
-	if (loginInfo.username.length < 5) {
-		return callback('账号最短为 5 个字符');
+	if (loginInfo.username.length < 3) {
+		return callback('账号最短为 3 个字符');
 	}
-	if (loginInfo.password.length < 6) {
-		return callback('密码最短为 6 个字符');
+	if (loginInfo.password.length < 3) {
+		return callback('密码最短为 3 个字符');
 	}
 	domainselect(loginInfo.line);
 	mui.getJSON(domain + "/index.php?m=home&c=api&a=login",{username:loginInfo.username,password:loginInfo.password},function(data){
