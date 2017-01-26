@@ -1,0 +1,192 @@
+{
+  "main.html": {
+    "refer": [
+      "setting.html",
+      "html/index.html",
+      "html/category.html",
+      "html/vip.html",
+      "html/member.html",
+      "login.html",
+      "html/search.html"
+    ],
+    "resources": [
+      "js/app.js",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "html/index.html",
+      "js/common.js",
+      "js/main.js"
+    ]
+  },
+  "login.html": {
+    "resources": [
+      "js/app.js",
+      "js/mui.min.js",
+      "images/sinaweibo.png",
+      "css/mui.min.css",
+      "css/style.css",
+      "images/weixin.png",
+      "images/qq.png",
+      "js/mui.enterfocus.js",
+      "js/common.js",
+      "fonts/mui.ttf"
+    ],
+    "refer": [
+      "main.html",
+      "reg.html",
+      "forget_password.html",
+      "unlock.html"
+    ]
+  },
+  "setting.html": {
+    "resources": [
+      "libs/easymob-webim-sdk/easemob.im-1.0.5.js",
+      "fonts/mui.ttf",
+      "libs/easymob-webim-sdk/json2.js",
+      "libs/easymob-webim-sdk/jquery-1.11.1.js",
+      "js/mui.locker.js",
+      "js/feedback.js",
+      "css/feedback-page.css",
+      "js/feedback-page.js",
+      "libs/easymob-webim-sdk/strophe-custom-2.0.0.js",
+      "js/mui.view.js",
+      "images/iconfont-tianjia.png",
+      "js/app.js",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "js/common.js"
+    ],
+    "refer": []
+  },
+  "html/index.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "js/common.js",
+      "fonts/mui.ttf",
+      "js/index.js"
+    ],
+    "refer": [
+      "html/article.html"
+    ]
+  },
+  "html/category.html": {
+    "resources": [
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "js/jquery-2.1.0.js",
+      "js/common.js"
+    ],
+    "refer": [
+      "html/categorylist.html"
+    ]
+  },
+  "html/categorylist.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "fonts/mui.ttf",
+      "js/common.js",
+      "html/categorylist_pullrefresh_sub.html"
+    ],
+    "refer": [
+      "html/categorylist_pullrefresh_sub.html"
+    ]
+  },
+  "html/categorylist_pullrefresh_sub.html": {
+    "resources": [
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "js/common.js"
+    ],
+    "refer": [
+      "html/article.html"
+    ]
+  },
+  "html/article.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "fonts/mui.ttf",
+      "js/common.js",
+      "js/article.js"
+    ],
+    "refer": [
+      "html/browser.html",
+      "html/vip.html"
+    ]
+  },
+  "html/browser.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "js/common.js"
+    ],
+    "refer": []
+  },
+  "unlock.html": {
+    "resources": [
+      "js/mui.locker.js",
+      "js/app.js",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "js/common.js"
+    ],
+    "refer": [
+      "main.html",
+      "login.html"
+    ]
+  },
+  "html/member.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "images/user-photo.png",
+      "fonts/mui.ttf",
+      "js/common.js",
+      "js/member.js"
+    ],
+    "refer": [
+      "login.html",
+      "setting.html",
+      "html/vip.html"
+    ]
+  },
+  "html/search.html": {
+    "resources": [
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "js/common.js",
+      "js/search.js"
+    ],
+    "refer": [
+      "html/article.html"
+    ]
+  },
+  "html/vip.html": {
+    "resources": [
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "html/vip.html",
+      "js/common.js"
+    ],
+    "refer": [
+      "html/vip.html",
+      "html/pay.html"
+    ]
+  },
+  "html/pay.html": {
+    "resources": [
+      "js/common.js",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "fonts/mui.ttf"
+    ],
+    "refer": []
+  }
+}
