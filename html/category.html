@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		
+<div class="muicontent">
+<ul class="mui-table-view" id="categorylist">
+  
+</ul>	
+</div>
+
+<script src="../js/mui.min.js"></script>
+<script src="../js/common.js"></script>
+<script type="text/javascript">
+	mui.init();
+	mui.plusReady(function(){
+		
+		mui.getJSON(domain + "/index.php?m=home&c=api&a=category","",function(data){
+			//alert(data);
+			var str = "";
+			//str += '<li class="mui-table-view-cell"><a class="mui-navigate-right">Item 1</a></li>';
+  			//str += '<li class="mui-table-view-cell"><a class="mui-navigate-right">Item 2</a></li>';
+  			//str += '<li class="mui-table-view-cell"><a class="mui-navigate-right">Item 3</a></li>';
+			mui.each(data,function(key,val){
+				str += '<li class="mui-table-view-cell"><a class="mui-navigate-right" categoryid="'+val.id+'">'+val.name+'</a></li>';
+				if(val.child != ""){
+					str += '<ul class="mui-table-view mui-table-view-chevron">';
+					mui.each(val.child,function(key1,val1){
+						str += '<li class="mui-table-view-cell"><a class="mui-navigate-right" categoryid="'+val1.id+'">'+"|----"+val1.name+'</a></li>';
+					});
+				}
+			});
+			//alert(str)
+			var categorylist = document.getElementById("categorylist");
+			categorylist.innerHTML = str;
+			//$("#categorylist").append(str);
+			//alert($("#categorylist").html())
+		});
+		mui("#categorylist").on("tap",".mui-navigate-right",function(){
+			var cateid = this.getAttribute("categoryid");
+			var catename = this.innerHTML;
+			plus.storage.setItem("curcatename",catename.replace("|----",""));
+			plus.storage.setItem("curcateid",cateid);
+			gotourl('categorylist.html');
+		})
+	});
+</script>
+	</body>
+
+</html>

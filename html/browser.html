@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/common.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			mui.plusReady(function(){
+				//gotourl(GetQueryString("link"));
+				var self = plus.webview.currentWebview();
+				var link = self.link;
+				mui.openWindow({
+					url:link,
+					id:link,
+					createNew:false,//是否重复创建同样id的webview，默认为false:不重复创建，直接显示
+				});
+			})
+		</script>
+	</body>
+
+</html>

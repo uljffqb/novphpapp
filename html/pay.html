@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<style>
+			img {
+				max-width: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-icon mui-icon-left-nav mui-pull-left mui-action-back"></a>
+			<h1 id="title" class="mui-title">支付宝二维码支付页面</h1>
+		</header>
+<div class="mui-content">
+	<div class="mui-card">
+		<!--页眉，放置标题-->
+		<div class="mui-card-header mui-text-center" style="padding: 10px;" id="paytitle"></div>
+		<!--内容区-->
+		<div class="mui-card-content mui-text-center"><img src="" id="qrcode"></div>
+		<!--页脚，放置补充信息或支持的操作-->
+		<div class="mui-card-footer" style="padding: 10px;">点击二维码保存到手机，然后打开支付宝APP，扫一扫，选择图片，选择刚刚保存的二维码，最后支付即可。</div>
+	</div>
+</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/pay.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

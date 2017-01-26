@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<style>
+			body {
+				background-color: #FFFFFF;
+			}
+			.info {
+				 padding: 5px 0; 
+				 font-size: 13px; 
+				 color: #999999;
+			}
+		</style>
+	</head>
+
+	<body>
+<div class="muicontent">
+<div style="height:160px; text-align: center; background-color: #FFFFFF; padding-top: 20px;">
+	<img src="../images/user-photo.png" style="width: 70px;">
+	<p id="nickname">昵称</p>
+	<p style="border-bottom: 1px solid #DDDDDD;">&nbsp;</p>
+	<div style="height: 50px; background: #FFFFFF; width: 100%;" class="mui-col-sm-12">
+		<div class="mui-col-sm-5 mui-col-xs-5 mui-pull-left info">注册时间<br><span id="regtime">2015-03-08</span></div>
+		<div class="mui-col-sm-1 mui-col-xs-1 mui-pull-left" style="height:50px;border-right: 1px solid #DDDDDD;"></div>
+		<div class="mui-col-sm-5 mui-col-xs-5 mui-pull-left info">用户组<br><span id="groupname">注册用户</span></div>
+		<div class="mui-clearfix">&nbsp;</div>
+	</div>
+</div>
+<div class="mui-clearfix">&nbsp;</div>
+<ul class="mui-table-view">
+	<li class="mui-table-view-cell"><a class="mui-navigate-right">个人资料</a></li>
+	<li class="mui-table-view-cell"><a class="mui-navigate-right">充值</a></li>
+	<li class="mui-table-view-cell" id="vip"><a class="mui-navigate-right">开通会员</a></li>
+	<li class="mui-table-view-cell">我的订单 <span class="mui-badge mui-badge-success">0</span>
+	</li>
+	<li class="mui-table-view-cell"><a class="mui-navigate-right">修改密码</a></li>
+	<li class="mui-table-view-cell" id="setting"><a class="mui-navigate-right">更多设置</a></li>
+</ul>
+<button class="mui-btn mui-btn-block" id="logout">退出登陆</button>
+</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/common.js"></script>
+		<script src="../js/member.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+		
+
+</html>
